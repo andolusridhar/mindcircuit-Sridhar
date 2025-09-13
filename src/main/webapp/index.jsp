@@ -362,7 +362,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2 style="font-size: 2.2rem; color: #40e0d0; margin-bottom: 1rem; font-weight: 300;">Hi Sridhar</h2>
-                <p class="subtitle">DevOps Engineer & Cloud Architect</p>
+                <p class="subtitle">Welcome to DevOps</p>
                 <p class="tagline">Building Scalable Infrastructure | Automating Excellence</p>
                 
                 <div class="terminal">
