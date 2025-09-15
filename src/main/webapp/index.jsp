@@ -34,6 +34,7 @@
             text-align: center;
             color: white;
             z-index: 1;
+            padding: 20px;
         }
 
         .content h1 {
@@ -43,15 +44,31 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
         .content p {
             font-size: 1.2rem;
             opacity: 0.9;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            opacity: 0;
+            animation: fadeIn 1s ease-in 1s forwards;
         }
 
         @keyframes float {
             0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
             50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -50%) translateY(10px); }
+            to { opacity: 0.9; transform: translate(-50%, -50%) translateY(0px); }
         }
 
         .cat {
@@ -298,9 +315,25 @@
             font-size: 0.9rem;
         }
 
+        .devops-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: fadeIn 1s ease-in 1.5s forwards;
+        }
+
         @media (max-width: 768px) {
             .content h1 {
                 font-size: 2rem;
+            }
+            .content h2 {
+                font-size: 1.5rem;
             }
             .content p {
                 font-size: 1rem;
@@ -323,8 +356,10 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Follow the Cat!</h1>
+            <h1>Hi Sridhar!</h1>
+            <h2>Welcome to DevOps</h2>
             <p>Move your mouse around and watch the cat follow you</p>
+            <div class="devops-badge">🚀 Automate, Deploy, Scale 🚀</div>
         </div>
 
         <div class="cat" id="cat">
