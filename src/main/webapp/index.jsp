@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sridhar - DevOps Professional</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Animated Cursor Cat</title>
     <style>
         * {
             margin: 0;
@@ -13,526 +12,555 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            color: #ffffff;
-            overflow-x: hidden;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            cursor: none;
+            position: relative;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
             position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: radial-gradient(ellipse at center, rgba(64, 224, 208, 0.1) 0%, transparent 50%);
+            width: 100%;
+            height: 100vh;
         }
 
-        .floating-particles {
+        .content {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
             z-index: 1;
         }
 
-        .particle {
-            position: absolute;
-            background: #40e0d0;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float 6s infinite ease-in-out;
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
         }
 
-        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 1s; }
-        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 2s; }
-        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 3s; }
-        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 4s; }
-        .particle:nth-child(6) { width: 6px; height: 6px; left: 60%; animation-delay: 5s; }
-        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 0.5s; }
-        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 1.5s; }
-        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 2.5s; }
+        .content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.6; }
-            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .name-title {
-            font-size: 5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #40e0d0, #00d4ff, #0099ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(64, 224, 208, 0.3);
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 20px rgba(64, 224, 208, 0.3)); }
-            to { filter: drop-shadow(0 0 40px rgba(64, 224, 208, 0.6)); }
-        }
-
-        .subtitle {
-            font-size: 1.8rem;
-            color: #b3b3cc;
-            margin-bottom: 2rem;
-            animation: slideUp 1s ease-out 0.5s both;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #40e0d0;
-            margin-bottom: 3rem;
-            animation: slideUp 1s ease-out 1s both;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* DevOps Skills Grid */
-        .skills-section {
-            padding: 100px 0;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            background: linear-gradient(135deg, #40e0d0, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-card {
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.1), rgba(0, 153, 255, 0.1));
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid rgba(64, 224, 208, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
+        .cat {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(64, 224, 208, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-            opacity: 0;
+            width: 80px;
+            height: 80px;
+            pointer-events: none;
+            z-index: 1000;
+            transition: transform 0.1s ease-out;
         }
 
-        .skill-card:hover::before {
-            opacity: 1;
-            animation: shimmer 2s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(64, 224, 208, 0.2);
-            border-color: rgba(64, 224, 208, 0.5);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            color: #40e0d0;
-            margin-bottom: 1rem;
+        .cat-body {
             position: relative;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
         }
 
-        .skill-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-description {
-            color: #b3b3cc;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Pipeline Animation */
-        .pipeline-section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .pipeline-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .pipeline-step {
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.15), rgba(0, 153, 255, 0.15));
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 2px solid rgba(64, 224, 208, 0.3);
-            flex: 1;
-            min-width: 200px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pipeline-step:hover {
-            transform: scale(1.05);
-            border-color: #40e0d0;
-            box-shadow: 0 10px 30px rgba(64, 224, 208, 0.3);
-        }
-
-        .pipeline-arrow {
-            font-size: 2rem;
-            color: #40e0d0;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(64, 224, 208, 0.2);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(145deg, rgba(64, 224, 208, 0.2), rgba(0, 153, 255, 0.2));
-            border-radius: 50%;
-            color: #40e0d0;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(64, 224, 208, 0.3);
-        }
-
-        .social-link:hover {
-            background: linear-gradient(145deg, #40e0d0, #00d4ff);
-            color: #0f0f23;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(64, 224, 208, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .name-title {
-                font-size: 3rem;
-            }
-
-            .subtitle {
-                font-size: 1.4rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pipeline-container {
-                flex-direction: column;
-            }
-
-            .pipeline-arrow {
-                transform: rotate(90deg);
-            }
-
-            .social-links {
-                gap: 1rem;
-            }
-        }
-
-        /* Code Terminal Effect */
-        .terminal {
-            background: #1a1a2e;
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(64, 224, 208, 0.3);
-            font-family: 'Courier New', monospace;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .terminal::before {
-            content: '';
+        .cat-head {
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 45px;
+            background: #ff6b6b;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .cat-ear {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .cat-ear.left {
+            top: -8px;
+            left: 5px;
+            border-width: 0 8px 15px 8px;
+            border-color: transparent transparent #ff6b6b transparent;
+            transform: rotate(-20deg);
+        }
+
+        .cat-ear.right {
+            top: -8px;
+            right: 5px;
+            border-width: 0 8px 15px 8px;
+            border-color: transparent transparent #ff6b6b transparent;
+            transform: rotate(20deg);
+        }
+
+        .cat-ear-inner {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .cat-ear-inner.left {
+            top: 3px;
+            left: -3px;
+            border-width: 0 4px 8px 4px;
+            border-color: transparent transparent #ffb3ba transparent;
+            transform: rotate(-20deg);
+        }
+
+        .cat-ear-inner.right {
+            top: 3px;
+            right: -3px;
+            border-width: 0 4px 8px 4px;
+            border-color: transparent transparent #ffb3ba transparent;
+            transform: rotate(20deg);
+        }
+
+        .cat-eye {
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            top: 15px;
+        }
+
+        .cat-eye.left {
+            left: 12px;
+        }
+
+        .cat-eye.right {
+            right: 12px;
+        }
+
+        .cat-eye.blink {
+            height: 1px;
+            transition: height 0.1s ease-in-out;
+        }
+
+        .cat-nose {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-width: 0 3px 3px 3px;
+            border-color: transparent transparent #d63031 transparent;
+        }
+
+        .cat-mouth {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 4px;
+            border: 1px solid #333;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .cat-whisker {
+            position: absolute;
+            width: 15px;
+            height: 1px;
+            background: #333;
+            top: 20px;
+        }
+
+        .cat-whisker.left1 {
+            left: -5px;
+            transform: rotate(-10deg);
+        }
+
+        .cat-whisker.left2 {
+            left: -5px;
+            top: 24px;
+            transform: rotate(10deg);
+        }
+
+        .cat-whisker.right1 {
+            right: -5px;
+            transform: rotate(10deg);
+        }
+
+        .cat-whisker.right2 {
+            right: -5px;
+            top: 24px;
+            transform: rotate(-10deg);
+        }
+
+        .cat-body-main {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 30px;
+            background: #ff6b6b;
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .cat-tail {
+            position: absolute;
+            top: 45px;
+            left: -15px;
+            width: 25px;
             height: 3px;
-            background: linear-gradient(90deg, #40e0d0, #00d4ff, #0099ff);
+            background: #ff6b6b;
+            border-radius: 3px;
+            transform-origin: right center;
+            animation: tailWag 2s ease-in-out infinite;
         }
 
-        .terminal-header {
-            color: #40e0d0;
+        @keyframes tailWag {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .cat-paw {
+            position: absolute;
+            width: 8px;
+            height: 6px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            bottom: -3px;
+        }
+
+        .cat-paw.left {
+            left: 8px;
+        }
+
+        .cat-paw.right {
+            right: 8px;
+        }
+
+        .cat.sleeping .cat-eye {
+            height: 1px;
+        }
+
+        .cat.running .cat-tail {
+            animation: tailWagFast 0.5s ease-in-out infinite;
+        }
+
+        @keyframes tailWagFast {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        .cat.happy .cat-mouth {
+            border-radius: 0 0 12px 12px;
+            height: 6px;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1s ease-out forwards;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5) rotate(180deg);
+            }
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            opacity: 0.8;
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
         }
 
-        .terminal-code {
-            color: #b3b3cc;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        .highlight {
-            color: #40e0d0;
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 2rem;
+            }
+            .content p {
+                font-size: 1rem;
+            }
+            .cat {
+                width: 60px;
+                height: 60px;
+            }
+            .cat-head {
+                width: 40px;
+                height: 36px;
+            }
+            .cat-body-main {
+                width: 28px;
+                height: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="floating-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+    <div class="container">
+        <div class="content">
+            <h1>Follow the Cat!</h1>
+            <p>Move your mouse around and watch the cat follow you</p>
+        </div>
+
+        <div class="cat" id="cat">
+            <div class="cat-body">
+                <div class="cat-head">
+                    <div class="cat-ear left">
+                        <div class="cat-ear-inner left"></div>
+                    </div>
+                    <div class="cat-ear right">
+                        <div class="cat-ear-inner right"></div>
+                    </div>
+                    <div class="cat-eye left" id="leftEye"></div>
+                    <div class="cat-eye right" id="rightEye"></div>
+                    <div class="cat-nose"></div>
+                    <div class="cat-mouth"></div>
+                    <div class="cat-whisker left1"></div>
+                    <div class="cat-whisker left2"></div>
+                    <div class="cat-whisker right1"></div>
+                    <div class="cat-whisker right2"></div>
+                </div>
+                <div class="cat-body-main">
+                    <div class="cat-tail"></div>
+                    <div class="cat-paw left"></div>
+                    <div class="cat-paw right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>🐱 The cat will follow your mouse! Try moving quickly or slowly!</p>
+        </div>
     </div>
 
-    <section class="header">
-        <div class="container">
-            <div class="hero-content">
-                <h2 style="font-size: 2.2rem; color: #40e0d0; margin-bottom: 1rem; font-weight: 300;">Hi Sridhar</h2>
-                <p class="subtitle">Welcome to DevOps</p>
-                <p class="tagline">Building Scalable Infrastructure | Automating Excellence</p>
-                
-                <div class="terminal">
-                    <div class="terminal-header">$ sridhar --info</div>
-                    <div class="terminal-code">
-                        <span class="highlight">Role:</span> DevOps Engineer<br>
-                        <span class="highlight">Expertise:</span> Kubernetes, Docker, AWS, CI/CD<br>
-                        <span class="highlight">Mission:</span> Streamlining deployment pipelines<br>
-                        <span class="highlight">Status:</span> <span style="color: #4ade80;">● Online</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills-section">
-        <div class="container">
-            <h2 class="section-title">DevOps Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                    <h3 class="skill-title">Containerization</h3>
-                    <p class="skill-description">Docker, Kubernetes, Container Orchestration, Microservices Architecture</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                    <h3 class="skill-title">Cloud Platforms</h3>
-                    <p class="skill-description">AWS, Azure, GCP, Infrastructure as Code, Multi-cloud Strategies</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
-                    <h3 class="skill-title">CI/CD Pipelines</h3>
-                    <p class="skill-description">Jenkins, GitLab CI, GitHub Actions, Automated Testing & Deployment</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="skill-title">Monitoring & Logging</h3>
-                    <p class="skill-description">Prometheus, Grafana, ELK Stack, Application Performance Monitoring</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="skill-title">Security & Compliance</h3>
-                    <p class="skill-description">DevSecOps, Security Scanning, Compliance Automation, Risk Management</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="skill-title">Infrastructure Automation</h3>
-                    <p class="skill-description">Terraform, Ansible, Puppet, Configuration Management, IaC</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pipeline-section">
-        <div class="container">
-            <h2 class="section-title">DevOps Pipeline</h2>
-            <div class="pipeline-container">
-                <div class="pipeline-step">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h3>Development</h3>
-                    <p>Code, Commit, Collaborate</p>
-                </div>
-                
-                <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-                
-                <div class="pipeline-step">
-                    <div class="skill-icon"><i class="fas fa-vial"></i></div>
-                    <h3>Testing</h3>
-                    <p>Automated Quality Assurance</p>
-                </div>
-                
-                <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-                
-                <div class="pipeline-step">
-                    <div class="skill-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Deployment</h3>
-                    <p>Continuous Integration & Delivery</p>
-                </div>
-                
-                <div class="pipeline-arrow"><i class="fas fa-arrow-right"></i></div>
-                
-                <div class="pipeline-step">
-                    <div class="skill-icon"><i class="fas fa-eye"></i></div>
-                    <h3>Monitoring</h3>
-                    <p>Performance & Health Tracking</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-docker"></i></a>
-                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p>&copy; 2025 Sridhar - DevOps Professional. Automating the Future.</p>
-        </div>
-    </footer>
-
     <script>
-        // Add smooth scrolling and interactive effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth reveal animation for skill cards
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Apply initial styles and observe elements
-            const skillCards = document.querySelectorAll('.skill-card');
-            skillCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
-
-            // Pipeline step animation
-            const pipelineSteps = document.querySelectorAll('.pipeline-step');
-            pipelineSteps.forEach((step, index) => {
-                step.style.opacity = '0';
-                step.style.transform = 'scale(0.8)';
-                step.style.transition = `all 0.6s ease ${index * 0.2}s`;
-                observer.observe(step);
-            });
-
-            // Dynamic particle colors
-            const particles = document.querySelectorAll('.particle');
-            setInterval(() => {
-                particles.forEach(particle => {
-                    const colors = ['#40e0d0', '#00d4ff', '#0099ff', '#4ade80', '#f59e0b'];
-                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-                });
-            }, 3000);
-
-            // Terminal typing effect
-            const terminalCode = document.querySelector('.terminal-code');
-            if (terminalCode) {
-                const originalText = terminalCode.innerHTML;
-                terminalCode.innerHTML = '';
-                let index = 0;
+        class CursorCat {
+            constructor() {
+                this.cat = document.getElementById('cat');
+                this.leftEye = document.getElementById('leftEye');
+                this.rightEye = document.getElementById('rightEye');
                 
-                function typeText() {
-                    if (index < originalText.length) {
-                        terminalCode.innerHTML = originalText.substring(0, index + 1);
-                        index++;
-                        setTimeout(typeText, 50);
-                    }
-                }
+                this.mouseX = window.innerWidth / 2;
+                this.mouseY = window.innerHeight / 2;
+                this.catX = this.mouseX;
+                this.catY = this.mouseY;
                 
-                setTimeout(typeText, 2000);
+                this.lastMouseX = this.mouseX;
+                this.lastMouseY = this.mouseY;
+                this.speed = 0;
+                this.isMoving = false;
+                
+                this.blinkInterval = null;
+                this.lastBlink = Date.now();
+                
+                this.init();
             }
+            
+            init() {
+                this.setupEventListeners();
+                this.startAnimationLoop();
+                this.startBlinking();
+                this.positionCat();
+            }
+            
+            setupEventListeners() {
+                document.addEventListener('mousemove', (e) => {
+                    this.lastMouseX = this.mouseX;
+                    this.lastMouseY = this.mouseY;
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                    
+                    this.calculateSpeed();
+                    this.createSparkle();
+                });
+                
+                document.addEventListener('mouseenter', () => {
+                    this.cat.style.opacity = '1';
+                });
+                
+                document.addEventListener('mouseleave', () => {
+                    this.cat.style.opacity = '0.3';
+                });
+                
+                // Touch support for mobile
+                document.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    this.lastMouseX = this.mouseX;
+                    this.lastMouseY = this.mouseY;
+                    this.mouseX = touch.clientX;
+                    this.mouseY = touch.clientY;
+                    
+                    this.calculateSpeed();
+                    this.createSparkle();
+                });
+            }
+            
+            calculateSpeed() {
+                const dx = this.mouseX - this.lastMouseX;
+                const dy = this.mouseY - this.lastMouseY;
+                this.speed = Math.sqrt(dx * dx + dy * dy);
+                this.isMoving = this.speed > 0.5;
+            }
+            
+            startAnimationLoop() {
+                const animate = () => {
+                    this.updateCatPosition();
+                    this.updateCatState();
+                    this.updateEyeDirection();
+                    requestAnimationFrame(animate);
+                };
+                animate();
+            }
+            
+            updateCatPosition() {
+                const dx = this.mouseX - this.catX;
+                const dy = this.mouseY - this.catY;
+                
+                // Smooth following with easing
+                const easing = this.isMoving ? 0.15 : 0.08;
+                this.catX += dx * easing;
+                this.catY += dy * easing;
+                
+                this.positionCat();
+            }
+            
+            positionCat() {
+                this.cat.style.left = (this.catX - 40) + 'px';
+                this.cat.style.top = (this.catY - 40) + 'px';
+            }
+            
+            updateCatState() {
+                // Remove all state classes
+                this.cat.classList.remove('sleeping', 'running', 'happy');
+                
+                if (this.speed > 8) {
+                    this.cat.classList.add('running');
+                } else if (this.speed < 0.5) {
+                    this.cat.classList.add('sleeping');
+                } else if (this.speed > 3 && this.speed < 6) {
+                    this.cat.classList.add('happy');
+                }
+            }
+            
+            updateEyeDirection() {
+                if (!this.isMoving) return;
+                
+                const dx = this.mouseX - this.catX;
+                const dy = this.mouseY - this.catY;
+                const angle = Math.atan2(dy, dx);
+                
+                const eyeOffset = 2;
+                const leftEyeX = Math.cos(angle) * eyeOffset;
+                const leftEyeY = Math.sin(angle) * eyeOffset;
+                const rightEyeX = Math.cos(angle) * eyeOffset;
+                const rightEyeY = Math.sin(angle) * eyeOffset;
+                
+                this.leftEye.style.transform = `translate(${leftEyeX}px, ${leftEyeY}px)`;
+                this.rightEye.style.transform = `translate(${rightEyeX}px, ${rightEyeY}px)`;
+            }
+            
+            startBlinking() {
+                setInterval(() => {
+                    if (Math.random() < 0.3) { // 30% chance to blink
+                        this.blink();
+                    }
+                }, 2000);
+            }
+            
+            blink() {
+                this.leftEye.classList.add('blink');
+                this.rightEye.classList.add('blink');
+                
+                setTimeout(() => {
+                    this.leftEye.classList.remove('blink');
+                    this.rightEye.classList.remove('blink');
+                }, 150);
+            }
+            
+            createSparkle() {
+                if (this.speed > 5 && Math.random() < 0.3) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = (this.catX + (Math.random() - 0.5) * 40) + 'px';
+                    sparkle.style.top = (this.catY + (Math.random() - 0.5) * 40) + 'px';
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 1000);
+                }
+            }
+        }
+        
+        // Initialize the cursor cat when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new CursorCat();
         });
+        
+        // Add some interactive elements
+        document.addEventListener('click', (e) => {
+            // Create a ripple effect at click position
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            ripple.style.width = '20px';
+            ripple.style.height = '20px';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.animation = 'ripple 0.6s ease-out forwards';
+            
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                0% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
